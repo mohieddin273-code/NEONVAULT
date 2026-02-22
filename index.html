@@ -531,6 +531,54 @@ border:1px solid rgba(57,255,20,0.3);color:var(--ngr);font-family:'Orbitron',mon
 .bey-power-btn.active{background:rgba(255,215,0,0.3);border-color:var(--ng);color:var(--ng);box-shadow:0 0 16px rgba(255,215,0,0.4);animation:s2pulse 0.5s infinite}
 .bey-power-btn.cooling{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.3)}
 
+/* ─── GACHA MACHINE ─── */
+.gacha-machine{background:radial-gradient(ellipse at top,#1a0a2e,#0a0a1a);border:2px solid rgba(191,0,255,0.4);border-radius:24px;padding:30px;text-align:center;position:relative;overflow:hidden;max-width:560px;margin:0 auto 20px;box-shadow:0 0 60px rgba(191,0,255,0.15),inset 0 1px 0 rgba(255,255,255,0.06)}
+.gacha-machine::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--npu),transparent);animation:scan 2s linear infinite}
+.gacha-window{width:160px;height:160px;margin:0 auto 20px;border-radius:50%;border:3px solid rgba(191,0,255,0.5);background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;box-shadow:0 0 40px rgba(191,0,255,0.2),inset 0 0 30px rgba(0,0,0,0.5);transition:all 0.3s}
+.gacha-window.spinning{animation:gspin 0.12s ease-in-out infinite alternate}
+@keyframes gspin{0%{transform:scale(0.95) rotate(-4deg)}100%{transform:scale(1.05) rotate(4deg)}}
+.gacha-rarity{font-family:"Orbitron",monospace;font-size:11px;font-weight:700;padding:4px 14px;border-radius:999px;margin:8px auto;display:inline-block}
+.gacha-rarity.common{background:rgba(150,150,150,0.15);border:1px solid rgba(150,150,150,0.4);color:#aaa}
+.gacha-rarity.rare{background:rgba(0,100,255,0.15);border:1px solid rgba(0,150,255,0.4);color:#44aaff}
+.gacha-rarity.epic{background:rgba(140,0,255,0.15);border:1px solid rgba(191,0,255,0.4);color:var(--npu)}
+.gacha-rarity.legendary{background:rgba(255,165,0,0.15);border:1px solid rgba(255,215,0,0.5);color:var(--ng);box-shadow:0 0 12px rgba(255,215,0,0.2)}
+.gacha-collection{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin-top:14px}
+.gacha-card{border-radius:14px;padding:14px;text-align:center;border:1px solid;transition:all 0.25s;position:relative;overflow:hidden}
+.gacha-card.common{border-color:rgba(150,150,150,0.25);background:rgba(150,150,150,0.05)}
+.gacha-card.rare{border-color:rgba(0,150,255,0.3);background:rgba(0,100,255,0.05)}
+.gacha-card.epic{border-color:rgba(191,0,255,0.35);background:rgba(140,0,255,0.07)}
+.gacha-card.legendary{border-color:rgba(255,215,0,0.5);background:rgba(255,165,0,0.07);box-shadow:0 0 20px rgba(255,215,0,0.08)}
+.gacha-card-icon{font-size:52px;margin-bottom:6px;display:block;line-height:1}
+.gacha-card-name{font-family:"Orbitron",monospace;font-size:9px;font-weight:700;color:rgba(255,255,255,0.85);margin-bottom:4px}
+.gacha-card-buff{font-size:8px;color:rgba(255,255,255,0.4);line-height:1.5;margin-bottom:4px}
+.gacha-card-count{position:absolute;top:8px;right:8px;font-family:"Orbitron",monospace;font-size:9px;background:rgba(0,0,0,0.7);border-radius:999px;padding:2px 7px}
+.gacha-card.locked .gacha-card-icon{filter:grayscale(1) brightness(0.3)}
+.pity-bar{height:8px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden;margin:6px 0;max-width:320px;margin-left:auto;margin-right:auto}
+.pity-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--npu),var(--np));transition:width 0.4s}
+.gacha-buff-active{padding:10px 14px;border-radius:10px;background:rgba(191,0,255,0.08);border:1px solid rgba(191,0,255,0.25);font-family:"Orbitron",monospace;font-size:10px;color:var(--npu);margin-bottom:12px;min-height:36px}
+/* ─── SPORTS BETTING ─── */
+.bet-tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
+.bet-tab{padding:8px 18px;border-radius:10px;border:1px solid rgba(57,255,20,0.2);background:rgba(57,255,20,0.03);color:rgba(57,255,20,0.5);cursor:pointer;font-family:"Orbitron",monospace;font-size:10px;font-weight:700;transition:all 0.2s}
+.bet-tab.active{border-color:var(--ngr);color:var(--ngr);background:rgba(57,255,20,0.08);box-shadow:0 0 14px rgba(57,255,20,0.1)}
+.event-card{border-radius:14px;border:1px solid rgba(57,255,20,0.15);background:rgba(0,20,0,0.4);padding:14px;margin-bottom:10px}
+.event-name{font-family:"Orbitron",monospace;font-size:12px;font-weight:700;color:var(--ngr);margin-bottom:4px}
+.event-meta{font-family:"Orbitron",monospace;font-size:9px;color:rgba(255,255,255,0.35);margin-bottom:10px}
+.odds-row{display:flex;gap:6px;flex-wrap:wrap}
+.odds-btn{flex:1;min-width:80px;padding:9px 8px;border-radius:9px;border:1px solid rgba(57,255,20,0.2);background:rgba(0,0,0,0.4);cursor:pointer;transition:all 0.2s;font-family:"Orbitron",monospace;font-size:9px;text-align:center}
+.odds-btn:hover{border-color:var(--ngr);background:rgba(57,255,20,0.06)}
+.odds-btn.picked{border-color:var(--ng);background:rgba(255,215,0,0.1);color:var(--ng)}
+.odds-name{font-size:9px;color:rgba(255,255,255,0.7);margin-bottom:2px}
+.odds-val{font-size:13px;font-weight:700;color:var(--ngr)}
+.bet-slip{background:rgba(0,20,0,0.6);border:1px solid rgba(57,255,20,0.2);border-radius:14px;padding:16px;margin-bottom:14px}
+.slip-item{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-family:"Orbitron",monospace;font-size:9px}
+.slip-item:last-of-type{border-bottom:none}
+.horse-track{background:rgba(0,10,0,0.8);border-radius:12px;border:1px solid rgba(57,255,20,0.15);padding:14px;margin:10px 0}
+.horse-lane{display:flex;align-items:center;gap:8px;height:32px}
+.horse-icon{font-size:22px;flex-shrink:0;transition:margin-left 0.1s linear}
+.horse-name-lbl{font-family:"Orbitron",monospace;font-size:8px;color:rgba(255,255,255,0.4);width:65px;flex-shrink:0}
+.horse-track-bar{flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;position:relative}
+.horse-pos-bar{height:4px;border-radius:2px;position:absolute;left:0;top:0;transition:width 0.1s linear}
+
 /* ─── HAMBURGER BUTTON (hidden on desktop) ─── */
 .hamburger{display:none;background:none;border:1px solid rgba(255,255,255,0.18);border-radius:8px;
 color:rgba(255,255,255,0.8);font-size:20px;width:38px;height:38px;cursor:pointer;
@@ -775,6 +823,8 @@ align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;padd
   <button class="nb" onclick="showSec('casino')" id="n-casino">🎰 CASINO</button>
   <button class="nb" onclick="showSec('stocks')" id="n-stocks">📈 STOCKS</button>
   <button class="nb" onclick="showSec('crash')" id="n-crash">🚀 CRASH</button>
+  <button class="nb" onclick="showSec('gacha')" id="n-gacha">🎰 GACHA</button>
+  <button class="nb" onclick="showSec('betting')" id="n-betting">🏇 BETTING</button>
   <button class="nb" onclick="showSec('chars')" id="n-chars">👤 REBIRTHS</button>
   <button class="nb" onclick="showSec('lobby')" id="n-lobby">🏆 LOBBY</button>
   <button class="nb" onclick="showSec('stage2')" id="n-stage2" style="display:none">⭐ STAGE II</button>
@@ -1204,6 +1254,96 @@ align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;padd
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="sec" id="sec-gacha">
+  <div class="sec-title" style="background:linear-gradient(135deg,var(--npu),var(--np),var(--npu));-webkit-background-clip:text;-webkit-text-fill-color:transparent">🎰 BRAINROT GACHA</div>
+  <div style="max-width:700px;margin:0 auto;padding:0 20px">
+
+    <div class="gacha-machine">
+      <div style="font-family:'Orbitron',monospace;font-size:10px;color:rgba(191,0,255,0.5);letter-spacing:3px;margin-bottom:14px">STEAL A BRAINROT × NEON VAULT</div>
+      <div class="gacha-window" id="gachaWindow"><span id="gachaWindowChar">🎰</span></div>
+      <div id="gachaRarityBadge" class="gacha-rarity common" style="opacity:0">COMMON</div>
+      <div style="font-family:'Orbitron',monospace;font-size:14px;font-weight:900;color:#fff;min-height:22px;margin:6px 0" id="gachaCharName">—</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.4);font-family:'Orbitron',monospace;min-height:18px;margin-bottom:12px" id="gachaCharBuff">Pull to discover a Brainrot!</div>
+      <div style="font-family:'Orbitron',monospace;font-size:9px;color:rgba(191,0,255,0.4);margin-bottom:4px">PITY METER — Legendary guaranteed at 50 pulls</div>
+      <div class="pity-bar"><div class="pity-fill" id="pityFill" style="width:0%"></div></div>
+      <div style="font-family:'Orbitron',monospace;font-size:8px;color:rgba(255,255,255,0.25);margin-bottom:14px" id="pityLabel">0 / 50 pulls</div>
+      <div class="gacha-buff-active" id="gachaActiveBuff">No buff active — pull a Brainrot!</div>
+      <div class="gacha-cost-btn">
+        <button class="btn btn-pu" onclick="gachaPull(1)" id="gachaPull1" style="font-size:11px">✨ PULL ×1<br><span style="font-size:9px;opacity:0.7">$500K</span></button>
+        <button class="btn btn-pu" onclick="gachaPull(10)" id="gachaPull10" style="font-size:11px">🌟 PULL ×10<br><span style="font-size:9px;opacity:0.7">$4M (RARE GUARANTEED)</span></button>
+      </div>
+    </div>
+
+    <div class="gp" style="border-color:rgba(191,0,255,0.2);background:rgba(20,0,40,0.8)">
+      <div class="pt" style="color:var(--npu)"><span class="em">📦</span>BRAINROT COLLECTION <span id="gachaCollectCount" style="color:rgba(255,255,255,0.3);font-size:9px">(0/7 discovered)</span></div>
+      <div class="gacha-collection" id="gachaCollection"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="sec" id="sec-betting">
+  <div class="sec-title" style="background:linear-gradient(135deg,var(--ngr),#00aa00,var(--ngr));-webkit-background-clip:text;-webkit-text-fill-color:transparent">🏇 SPORTS BETTING</div>
+  <div style="max-width:900px;margin:0 auto;padding:0 20px">
+
+    <div class="bet-tabs" id="bettingTabs">
+      <button class="bet-tab active" onclick="betTab('horse')" id="bett-horse">🐎 HORSE RACING</button>
+      <button class="bet-tab" onclick="betTab('football')" id="bett-football">⚽ FOOTBALL</button>
+      <button class="bet-tab" onclick="betTab('basketball')" id="bett-basketball">🏀 BASKETBALL</button>
+      <button class="bet-tab" onclick="betTab('boxing')" id="bett-boxing">🥊 BOXING</button>
+      <button class="bet-tab" onclick="betTab('mma')" id="bett-mma">🥋 MMA</button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 300px;gap:16px;align-items:start">
+      <div>
+        <!-- Horse Racing -->
+        <div id="betc-horse">
+          <div class="gp" style="border-color:rgba(57,255,20,0.2);background:rgba(0,15,0,0.7)">
+            <div class="pt" style="color:var(--ngr)"><span class="em">🐎</span>RACE TRACK LIVE</div>
+            <div id="horseRaceTrack" class="horse-track" style="display:none"></div>
+            <div id="horseEvents"></div>
+            <div id="horseRaceStatus" style="font-family:'Orbitron',monospace;font-size:11px;text-align:center;min-height:22px;color:rgba(57,255,20,0.6);margin-top:10px"></div>
+          </div>
+        </div>
+        <!-- Football -->
+        <div id="betc-football" style="display:none">
+          <div id="footballEvents"></div>
+        </div>
+        <!-- Basketball -->
+        <div id="betc-basketball" style="display:none">
+          <div id="basketballEvents"></div>
+        </div>
+        <!-- Boxing -->
+        <div id="betc-boxing" style="display:none">
+          <div id="boxingEvents"></div>
+        </div>
+        <!-- MMA -->
+        <div id="betc-mma" style="display:none">
+          <div id="mmaEvents"></div>
+        </div>
+      </div>
+
+      <!-- Bet Slip -->
+      <div style="position:sticky;top:70px">
+        <div class="bet-slip">
+          <div class="bet-slip-title">📋 BET SLIP</div>
+          <div id="betSlipItems"><div style="font-family:'Orbitron',monospace;font-size:10px;color:rgba(255,255,255,0.25);text-align:center;padding:12px">Select an outcome to bet</div></div>
+          <div style="margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap" id="betSlipControls" style="display:none">
+            <div class="iw"><div class="il">BET ($)</div><input type="number" class="gi" id="betAmount" value="50000" min="1000" style="width:110px;border-color:rgba(57,255,20,0.3);color:var(--ngr)"></div>
+            <div style="font-family:'Orbitron',monospace;font-size:9px;color:rgba(255,255,255,0.4)">TO WIN: <span id="betPotential" style="color:var(--ngr);font-size:11px;font-weight:700">$0</span></div>
+          </div>
+          <button class="btn btn-gr" id="placeBetBtn" onclick="placeBet()" style="width:100%;margin-top:10px;font-size:11px" disabled>PLACE BET</button>
+        </div>
+        <div class="gp" style="border-color:rgba(57,255,20,0.2);background:rgba(0,15,0,0.7)">
+          <div class="pt" style="color:var(--ngr);font-size:10px"><span class="em">📊</span>BETTING HISTORY</div>
+          <div id="betHistory" style="font-family:'Orbitron',monospace;font-size:9px;color:rgba(255,255,255,0.35);max-height:200px;overflow-y:auto;line-height:2">No bets placed yet</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -3601,28 +3741,40 @@ const BEY_LAYERS=[
    power:{id:'flame_surge',name:'Flame Surge',desc:'Ring of fire — +150% collision damage for 3s',cd:10,key:'1'}},
   {id:'voltaic',name:'VOLTAIC',icon:'⚡',atk:85,def:50,desc:'Electric charge. Surges unpredictably.',
    power:{id:'voltage_spike',name:'Voltage Spike',desc:'Next 3 hits deal ×3 damage',cd:14,key:'1'}},
+  {id:'shadow',name:'SHADOWFANG',icon:'🌑',atk:80,def:60,desc:'Dark stealth blade. Invisible to AI for 2s.',
+   power:{id:'shadow_cloak',name:'Shadow Cloak',desc:'Vanish — AI loses your position for 2.5s, moves randomly',cd:13,key:'1'}},
+  {id:'blizzard',name:'BLIZZARD',icon:'❄️',atk:55,def:80,desc:'Ice type. Freezes the arena edge on impact.',
+   power:{id:'ice_storm',name:'Ice Storm',desc:'Freeze AI in place for 2s — cannot move',cd:18,key:'1'}},
 ];
 const BEY_DISCS=[
   {id:'heavy',name:'HEAVY',icon:'⚫',stamina:40,weight:90,desc:'Max weight. Crushing impact force.'},
   {id:'spread',name:'SPREAD',icon:'🌀',stamina:80,weight:50,desc:'Wide disc. Superior stamina retention.'},
   {id:'wave',name:'WAVE',icon:'〰️',stamina:65,weight:65,desc:'Balanced. Good all-round performance.'},
   {id:'needle',name:'NEEDLE',icon:'🔱',stamina:50,weight:75,desc:'Sharp disc. Extra push on contact.'},
+  {id:'gravity',name:'GRAVITY',icon:'🌐',stamina:60,weight:85,desc:'Dense gravity disc. Pulls opponent inward.'},
+  {id:'chaos',name:'CHAOS',icon:'💀',stamina:55,weight:70,desc:'Unstable disc. Random massive damage bursts.'},
 ];
 const BEY_DRIVERS=[
-  {id:'assault',name:'ASSAULT',icon:'💥',speed:90,control:40,desc:'Aggressive sliding. Huge rush power.',
-   power:{id:'rampage',name:'Rampage',desc:'Auto-chase AI at full speed for 4s',cd:16,key:'2'}},
+  {id:'assault',name:'ASSAULT',icon:'💥',speed:90,control:40,desc:'Aggressive sliding. Huge rush power. RAMPAGE: 1s auto-chase.',
+   power:{id:'rampage',name:'Rampage',desc:'Auto-chase AI at max speed for 1s (NERFED)',cd:10,key:'2'}},
   {id:'defense',name:'DEFENSE',icon:'🛡',speed:30,control:95,desc:'Rubber tip. Soaks hits near center.',
    power:{id:'anchor',name:'Anchor',desc:'Teleport to center, immune to pushback 3s',cd:12,key:'2'}},
   {id:'orbit',name:'ORBIT',icon:'🌐',speed:60,control:75,desc:'Gyroscopic orbit. Unpredictable path.',
    power:{id:'gyro',name:'Gyro Spin',desc:'Reverse AI orbit tracking for 3s',cd:10,key:'2'}},
   {id:'xtreme',name:'XTREME',icon:'🔴',speed:85,control:55,desc:'Fastest aggressive driver.',
    power:{id:'turbo',name:'Turbo Boost',desc:'×3 speed, ignore arena edge for 3s',cd:13,key:'2'}},
+  {id:'phantom',name:'PHANTOM',icon:'👻',speed:70,control:70,desc:'Phase driver. Passes through bounces once.',
+   power:{id:'phase_shift',name:'Phase Shift',desc:'Next arena wall hit — pass through instead of bouncing',cd:9,key:'2'}},
+  {id:'quake',name:'QUAKE',icon:'🌋',speed:50,control:80,desc:'Seismic driver. Shakes arena walls.',
+   power:{id:'earthquake',name:'Earthquake',desc:'Stun both blades 0.8s then launch yours outward at 2× speed',cd:14,key:'2'}},
 ];
 const DISC_POWERS={
   heavy:{id:'smash',name:'Impact Smash',desc:'Instantly knock AI back 80px',cd:11,key:'3'},
   spread:{id:'vortex',name:'Spin Vortex',desc:'Pull AI toward you for 2s',cd:10,key:'3'},
   wave:{id:'ripple',name:'Ripple Guard',desc:'Next contact stuns AI for 1.5s',cd:12,key:'3'},
   needle:{id:'pierce',name:'Pierce Strike',desc:'Next hit drains 25% AI stamina',cd:9,key:'3'},
+  gravity:{id:'singularity',name:'Singularity',desc:'Warp AI to 40px from you for 1.5s pull window',cd:13,key:'3'},
+  chaos:{id:'chaos_burst',name:'Chaos Burst',desc:'Random: 50% chance of dealing 30% stamina or losing 10%',cd:8,key:'3'},
 };
 
 let beyBlade=null,beyBattleState=null,beyLoop=null;
@@ -3759,15 +3911,37 @@ function beyActivate(idx){
   else if(id==='iron_shell'){b.shield=true;setTimeout(()=>b.shield=false,3000);}
   else if(id==='flame_surge'){beyPA[id]=true;setTimeout(()=>beyPA[id]=false,3000);}
   else if(id==='voltage_spike'){b.vSpike=3;}
+  else if(id==='shadow_cloak'){beyPA[id]=true;setTimeout(()=>beyPA[id]=false,2500);}
+  else if(id==='ice_storm'){b.aFrozen=true;b.avx=0;b.avy=0;setTimeout(()=>b.aFrozen=false,2000);}
   else if(id==='smash'){const dx=b.ax-b.px,dy=b.ay-b.py,d=Math.sqrt(dx*dx+dy*dy)||1;b.avx+=(dx/d)*15;b.avy+=(dy/d)*15;}
   else if(id==='vortex'){beyPA[id]=true;setTimeout(()=>beyPA[id]=false,2000);}
   else if(id==='ripple'){b.rippleReady=true;}
   else if(id==='pierce'){b.pierceReady=true;}
-  else if(id==='rampage'){beyPA[id]=true;setTimeout(()=>beyPA[id]=false,4000);}
+  else if(id==='singularity'){// teleport AI near player
+    const dx=b.px-b.ax,dy=b.py-b.ay,d=Math.sqrt(dx*dx+dy*dy)||1;
+    b.ax=b.px-(dx/d)*40;b.ay=b.py-(dy/d)*40;b.avx=0;b.avy=0;
+    beyPA.vortex=true;setTimeout(()=>beyPA.vortex=false,1500);}
+  else if(id==='chaos_burst'){
+    if(Math.random()<0.5){b.aStam-=30;toast('💀 CHAOS: +30 damage dealt!','gold');}
+    else{b.pStam-=10;toast('💀 CHAOS: Backfired! -10 stamina','error');}
+  }
+  else if(id==='rampage'){beyPA[id]=true;setTimeout(()=>beyPA[id]=false,1000);} // NERFED: 1s
   else if(id==='anchor'){b.px=BCX;b.py=BCY;b.pvx=0;b.pvy=0;beyPA[id]=true;setTimeout(()=>beyPA[id]=false,3000);}
   else if(id==='gyro'){beyPA[id]=true;setTimeout(()=>beyPA[id]=false,3000);}
   else if(id==='turbo'){b.pSpd*=3;beyPA[id]=true;setTimeout(()=>{b.pSpd/=3;beyPA[id]=false;},3000);}
-  toast(`⚡ ${p.name} ACTIVATED!`,'gold');
+  else if(id==='phase_shift'){b.phaseReady=true;}
+  else if(id==='earthquake'){
+    // Both freeze briefly, then player blasts outward
+    b.aFrozen=true;b.phaseReady=false;
+    const origSpd=b.pSpd;b.pvx=0;b.pvy=0;b.avx=0;b.avy=0;
+    setTimeout(()=>{
+      b.aFrozen=false;
+      // Launch player blade away from center at speed
+      const dx=b.px-BCX,dy=b.py-BCY,d=Math.sqrt(dx*dx+dy*dy)||1;
+      b.pvx=(dx/d)*b.pSpd*4;b.pvy=(dy/d)*b.pSpd*4;
+    },800);
+  }
+  toast(`⚡ ${p.name}!`,'gold');
 }
 
 function beyFrame(){
@@ -3801,14 +3975,21 @@ function beyFrame(){
   b.pvx*=0.87;b.pvy*=0.87;b.px+=b.pvx;b.py+=b.pvy;
   b.prot+=0.14+b.pSpd*.02;
 
-  // AI orbit logic
-  b.aAngle+=(beyPA.gyro?-0.03:0.028);
-  const orb=80+Math.sin(b.frame*.035)*28;
-  const tx=BCX+Math.cos(b.aAngle)*orb,ty=BCY+Math.sin(b.aAngle)*orb;
-  const dax=tx-b.ax,day=ty-b.ay,da=Math.sqrt(dax*dax+day*day)||1;
-  b.avx+=(dax/da)*b.aSpd*.2;b.avy+=(day/da)*b.aSpd*.2;
-  if(b.frame%80<22){const dx=b.px-b.ax,dy=b.py-b.ay,d=Math.sqrt(dx*dx+dy*dy)||1;b.avx+=(dx/d)*b.aSpd*.35;b.avy+=(dy/d)*b.aSpd*.35;}
-  b.avx*=0.89;b.avy*=0.89;b.ax+=b.avx;b.ay+=b.avy;
+  // AI orbit logic (frozen = cannot move)
+  if(!b.aFrozen){
+    b.aAngle+=(beyPA.gyro?-0.03:0.028);
+    // Shadow cloak: AI moves randomly instead of tracking player
+    if(beyPA.shadow_cloak){
+      b.avx+=(Math.random()-0.5)*b.aSpd*0.8;b.avy+=(Math.random()-0.5)*b.aSpd*0.8;
+    } else {
+      const orb=80+Math.sin(b.frame*.035)*28;
+      const tx=BCX+Math.cos(b.aAngle)*orb,ty=BCY+Math.sin(b.aAngle)*orb;
+      const dax=tx-b.ax,day=ty-b.ay,da=Math.sqrt(dax*dax+day*day)||1;
+      b.avx+=(dax/da)*b.aSpd*.2;b.avy+=(day/da)*b.aSpd*.2;
+      if(b.frame%80<22){const dx=b.px-b.ax,dy=b.py-b.ay,d=Math.sqrt(dx*dx+dy*dy)||1;b.avx+=(dx/d)*b.aSpd*.35;b.avy+=(dy/d)*b.aSpd*.35;}
+    }
+    b.avx*=0.89;b.avy*=0.89;b.ax+=b.avx;b.ay+=b.avy;
+  }
   b.arot+=0.13;
 
   // Arena bounce
@@ -3818,7 +3999,14 @@ function beyFrame(){
     if(dist>lim){const nx=dx/dist,ny=dy/dist;x=BCX+nx*lim;y=BCY+ny*lim;const dot=vx*nx+vy*ny;vx-=2*dot*nx;vy-=2*dot*ny;vx*=.55;vy*=.55;return{x,y,vx,vy,oob:true};}
     return{x,y,vx,vy,oob:false};
   }
-  let pr=bounce(b.px,b.py,b.pvx,b.pvy,beyPA.turbo);
+  // Phase shift: if player hits edge, pass through once and consume the phase
+  let pPhaseOOB=false;
+  {
+    const dx=b.px-BCX,dy=b.py-BCY,dist=Math.sqrt(dx*dx+dy*dy);
+    if(dist>BAR-12&&b.phaseReady){b.phaseReady=false;pPhaseOOB=false;} // pass through
+    else pPhaseOOB=(dist>BAR-12);
+  }
+  let pr=bounce(b.px,b.py,b.pvx,b.pvy,beyPA.turbo||b.phaseReady);
   b.px=pr.x;b.py=pr.y;b.pvx=pr.vx;b.pvy=pr.vy;
   let ar=bounce(b.ax,b.ay,b.avx,b.avy,false);
   b.ax=ar.x;b.ay=ar.y;b.avx=ar.vx;b.avy=ar.vy;
@@ -3888,6 +4076,18 @@ function beyDrawFrame(b){
     fg.addColorStop(0,'rgba(255,80,0,.7)');fg.addColorStop(1,'transparent');
     ctx.fillStyle=fg;ctx.beginPath();ctx.arc(b.px,b.py,38,0,Math.PI*2);ctx.fill();ctx.restore();
   }
+  if(beyPA.shadow_cloak){
+    ctx.save();ctx.fillStyle='rgba(0,0,0,0.4)';ctx.beginPath();ctx.arc(b.px,b.py,20,0,Math.PI*2);ctx.fill();ctx.restore();
+  }
+  if(b.aFrozen){
+    ctx.save();
+    ctx.strokeStyle='rgba(0,200,255,0.9)';ctx.lineWidth=3;
+    ctx.shadowBlur=20;ctx.shadowColor='#00ccff';
+    ctx.beginPath();ctx.arc(b.ax,b.ay,24,0,Math.PI*2);ctx.stroke();
+    // ice crystals
+    for(let i=0;i<6;i++){ctx.beginPath();ctx.moveTo(b.ax,b.ay);ctx.lineTo(b.ax+Math.cos(i*Math.PI/3)*22,b.ay+Math.sin(i*Math.PI/3)*22);ctx.stroke();}
+    ctx.restore();
+  }
 
   // Blades
   function drawBlade(x,y,rot,mainCol,glowCol,lbl){
@@ -3944,6 +4144,374 @@ function beyEndBattle(playerWon,timeout){
 }
 function beyForfeit(){if(beyBattleState)beyEndBattle(false,false);}
 
+// ══════════════════════════════════════════════════════════════════
+// 🎰  BRAINROT GACHA MACHINE
+// ══════════════════════════════════════════════════════════════════
+const BRAINROTS=[
+  {
+    id:'meowl67',name:'MEOWL 67',rarity:'legendary',icon:'🦉',
+    art:'🦉😾', // owl-cat hybrid - emerald green feathers, cat ears, slit pupils, Nike shoes
+    buff:{label:'MINING SURGE',desc:'+40% passive mining income',apply:()=>{S.gachaBuff='meowl67';S.gachaBuffVal=1.4;}},
+    flavor:'"Skibidi hawk tuah, 67 rizz" — does not elaborate further'
+  },
+  {
+    id:'dragoncannonelli',name:'DRAGON CANNONELLI',rarity:'legendary',icon:'🐉',
+    art:'🐉💣',
+    buff:{label:'CRASH CANNONS',desc:'Crash game starts at 1.5× minimum',apply:()=>{S.gachaBuff='dragoncannonelli';S.gachaBuffVal=1.5;}},
+    flavor:'"Bombardiro bombardiro, cannonelli cannonelli" — Italian siege dragon'
+  },
+  {
+    id:'tralalero',name:'TRALALERO TRALALA',rarity:'epic',icon:'🦀',
+    art:'🦀👟',
+    buff:{label:'CRAB RAVE',desc:'+25% casino winnings',apply:()=>{S.gachaBuff='tralalero';S.gachaBuffVal=1.25;}},
+    flavor:'"Tralalero tralala" — Italian crab wearing Nike Airs, speaks only in song'
+  },
+  {
+    id:'bombardiro',name:'BOMBARDIRO CROCODILLO',rarity:'epic',icon:'🐊',
+    art:'🐊✈️',
+    buff:{label:'AERIAL STRIKE',desc:'Beyblade battles pay +35% on win',apply:()=>{S.gachaBuff='bombardiro';S.gachaBuffVal=1.35;}},
+    flavor:'"Bombardiro crocodillo" — crocodile-aircraft hybrid, has never landed'
+  },
+  {
+    id:'bombombini',name:'BOMBOMBINI GUSINI',rarity:'epic',icon:'🪿',
+    art:'💣🪿',
+    buff:{label:'GOOSE BOMBS',desc:'Stock market gains ×1.5 multiplier',apply:()=>{S.gachaBuff='bombombini';S.gachaBuffVal=1.5;}},
+    flavor:'"Bombombini gusini bum bum" — explosive goose, hostile to all parties'
+  },
+  {
+    id:'chimpanzini',name:'CHIMPANZINI BANANINI',rarity:'rare',icon:'🦧',
+    art:'🦧🍌',
+    buff:{label:'BANANA ECONOMY',desc:'+20% all income for 3 days',apply:()=>{S.gachaBuff='chimpanzini';S.gachaBuffVal=1.2;}},
+    flavor:'"Chimpanzini bananini" — PhD in economics, pays exclusively in bananas'
+  },
+  {
+    id:'frigocamello',name:'FRIGO CAMELLO',rarity:'rare',icon:'🐪',
+    art:'🐪❄️',
+    buff:{label:'COLD STORAGE',desc:'Real estate rents +30% for 5 days',apply:()=>{S.gachaBuff='frigocamello';S.gachaBuffVal=1.3;}},
+    flavor:'"Frigo camello" — refrigerator fused with a camel, delivers frozen goods across Sahara'
+  },
+];
+
+const GACHA_COST_1=500000;
+const GACHA_COST_10=4000000;
+let gachaState={pulls:0,pity:0,collection:{}};
+
+function gachaRoll(){
+  const pity=gachaState.pity;
+  let r=Math.random();
+  // Pity: at 50 pulls guarantee legendary
+  if(pity>=49||(pity>=30&&r<0.08)){return'legendary';}
+  if(r<0.03)return'legendary';
+  if(r<0.12)return'epic';
+  if(r<0.35)return'rare';
+  return'common';
+}
+
+function gachaPickChar(rarity){
+  const pool=BRAINROTS.filter(b=>b.rarity===rarity||
+    (rarity==='common'&&(b.rarity==='common'||b.rarity==='rare')));
+  if(pool.length===0)return BRAINROTS.filter(b=>b.rarity==='rare')[0]||BRAINROTS[0];
+  return pool[Math.floor(Math.random()*pool.length)];
+}
+
+function gachaPull(count){
+  const cost=count===1?GACHA_COST_1:GACHA_COST_10;
+  if(S.cash<cost){toast('Not enough cash!','error');return;}
+  lose(cost);sfx('jackpot');
+  const results=[];
+  for(let i=0;i<count;i++){
+    const rarity=gachaRoll();
+    gachaState.pity=(rarity==='legendary')?0:gachaState.pity+1;
+    gachaState.pulls++;
+    const char=gachaPickChar(rarity);
+    results.push({char,rarity});
+    if(!gachaState.collection[char.id])gachaState.collection[char.id]=0;
+    gachaState.collection[char.id]++;
+  }
+  // For multi-pull, guarantee at least rare
+  if(count===10&&!results.some(r=>r.rarity==='rare'||r.rarity==='epic'||r.rarity==='legendary')){
+    const rares=BRAINROTS.filter(b=>b.rarity==='rare');
+    const forced=rares[Math.floor(Math.random()*rares.length)];
+    results[9]={char:forced,rarity:'rare'};
+    gachaState.collection[forced.id]=(gachaState.collection[forced.id]||0)+1;
+  }
+  // Apply best buff from results (highest rarity wins)
+  const rarityOrder=['legendary','epic','rare','common'];
+  const best=results.sort((a,b)=>rarityOrder.indexOf(a.rarity)-rarityOrder.indexOf(b.rarity))[0];
+  best.char.buff.apply();
+  S.gachaBuffLabel=`${best.char.art} ${best.char.name}: ${best.char.buff.label}`;
+  // Animate
+  animGachaPull(results,0,best);
+}
+
+function animGachaPull(results,idx,best){
+  const win=document.getElementById('gachaWindow');
+  const char=results[idx].char;
+  const rarity=results[idx].rarity;
+  win.classList.add('spinning');
+  // Flash through random icons
+  let flashes=0;const maxFlash=idx===results.length-1?18:6;
+  const interval=setInterval(()=>{
+    const rand=BRAINROTS[Math.floor(Math.random()*BRAINROTS.length)];
+    document.getElementById('gachaWindowChar').textContent=rand.art||rand.icon;
+    flashes++;
+    if(flashes>=maxFlash){
+      clearInterval(interval);
+      win.classList.remove('spinning');
+      document.getElementById('gachaWindowChar').textContent=char.art||char.icon;
+      const badge=document.getElementById('gachaRarityBadge');
+      badge.textContent=rarity.toUpperCase();badge.className=`gacha-rarity ${rarity}`;badge.style.opacity='1';
+      document.getElementById('gachaCharName').textContent=char.name;
+      document.getElementById('gachaCharBuff').textContent=char.buff.desc;
+      if(rarity==='legendary'){sfx('bigwin');toast(`🌟 LEGENDARY! ${char.name}!`,'gold');}
+      else if(rarity==='epic'){sfx('win');toast(`💜 EPIC! ${char.name}!`,'success');}
+      else sfx('flip');
+      updGachaPity();updGachaCollection();updGachaActiveBuff();
+      if(idx<results.length-1){setTimeout(()=>animGachaPull(results,idx+1,best),600);}
+    }
+  },80);
+}
+
+function updGachaPity(){
+  const p=gachaState.pity;
+  document.getElementById('pityFill').style.width=(p/50*100)+'%';
+  document.getElementById('pityLabel').textContent=`${p} / 50 pulls (${50-p} until guaranteed legendary)`;
+}
+
+function updGachaActiveBuff(){
+  const el=document.getElementById('gachaActiveBuff');
+  if(S.gachaBuffLabel)el.textContent='⚡ ACTIVE: '+S.gachaBuffLabel;
+  else el.textContent='No buff active — pull a Brainrot!';
+}
+
+function updGachaCollection(){
+  const el=document.getElementById('gachaCollection');if(!el)return;
+  const discovered=Object.keys(gachaState.collection).length;
+  document.getElementById('gachaCollectCount').textContent=`(${discovered}/7 discovered)`;
+  el.innerHTML=BRAINROTS.map(b=>{
+    const count=gachaState.collection[b.id]||0;
+    const locked=count===0;
+    return`<div class="gacha-card ${b.rarity}${locked?' locked':''}">
+      ${count>0?`<div class="gacha-card-count">×${count}</div>`:''}
+      <div class="gacha-card-icon">${locked?'❓':b.art||b.icon}</div>
+      <div class="gacha-card-name">${locked?'???':b.name}</div>
+      <div class="gacha-card-buff">${locked?'Pull to discover':b.buff.label+'<br>'+b.flavor}</div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// 🏇  SPORTS BETTING
+// ══════════════════════════════════════════════════════════════════
+const HORSES=['Neon Dasher','Crypto Colt','Sigma Stallion','Gigachad Thunder','Moon Rocket','Brainrot Bay','Touch Grass','Rizz Lightning'];
+const HORSE_COLORS=['#ff006e','#00fff5','#ffd700','#39ff14','#bf00ff','#ff8c00','#44aaff','#ff4444'];
+
+const SPORT_TEAMS={
+  football:[['Neon FC','Cyber United'],['Crypto City','Sigma Squad'],['Gigachad FC','Brainrot Athletic'],['Moon United','Rizz Rangers']],
+  basketball:[['NeonVault Ballers','Crypto Dunkers'],['Sigma Three-Point','Gigachad Heat'],['Brainrot Bulls','Moon Mavericks'],['Rizz Rockets','Touch Grass Nets']],
+  boxing:[['Neon Knuckles','Crypto Crusher'],['Sigma Slapper','Gigachad Gorilla'],['Brainrot Brawler','Moon Mauler'],['Rizz Right Hook','Touch Grass Tank']],
+  mma:[['Neon Ninja','Crypto Cage Lord'],['Sigma Striker','Gigachad Grappler'],['Brainrot Brawler MX','Moon Monk'],['Rizz Rear Naked','Touch Grass Takedown']],
+};
+
+let bettingState={
+  currentTab:'horse',
+  betSlip:{event:null,pick:null,odds:null,label:''},
+  horseRace:{running:false,loop:null,pos:[],winner:-1},
+  activeEvents:{football:[],basketball:[],boxing:[],mma:[]},
+  history:[],
+};
+
+function betTab(id){
+  document.querySelectorAll('.bet-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('bett-'+id).classList.add('active');
+  ['horse','football','basketball','boxing','mma'].forEach(t=>{
+    document.getElementById('betc-'+t).style.display=t===id?'':'none';
+  });
+  bettingState.currentTab=id;
+  sfx('click');
+  if(id==='horse')renderHorseRace();
+  else renderSportEvents(id);
+}
+
+function renderHorseRace(){
+  const el=document.getElementById('horseEvents');if(!el)return;
+  const race=bettingState.horseRace;
+  if(race.running)return;
+  // Generate fresh odds for 8 horses
+  const odds=HORSES.map(()=>+(1.5+Math.random()*6).toFixed(2));
+  el.innerHTML=`<div class="event-card"><div class="event-name">🐎 NEON VAULT GRAND PRIX</div>
+    <div class="event-meta">8 RUNNERS • FLAT RACE • PRIZE POOL: VARIES</div>
+    <div class="odds-row">${HORSES.map((h,i)=>`
+      <div class="odds-btn" id="horse-pick-${i}" onclick="pickHorse(${i},${odds[i]},'${h}')">
+        <div class="odds-name" style="color:${HORSE_COLORS[i]}">${h}</div>
+        <div class="odds-val">${odds[i]}×</div>
+      </div>`).join('')}
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap">
+      <button class="btn btn-gr" onclick="startHorseRace()" id="startRaceBtn" style="font-size:11px">🏁 START RACE</button>
+      <div style="font-family:'Orbitron',monospace;font-size:9px;color:rgba(57,255,20,0.5)">Place a bet on the slip first!</div>
+    </div>
+  </div>`;
+}
+
+function pickHorse(idx,odds,name){
+  document.querySelectorAll('[id^="horse-pick-"]').forEach(b=>b.classList.remove('picked'));
+  document.getElementById('horse-pick-'+idx).classList.add('picked');
+  bettingState.betSlip={event:'🐎 Grand Prix',pick:name,odds,label:`${name} wins @ ${odds}×`,horseIdx:idx};
+  updBetSlip();sfx('click');
+}
+
+function renderSportEvents(sport){
+  const el=document.getElementById(sport+'Events');if(!el)return;
+  const teams=SPORT_TEAMS[sport];
+  const events=teams.map(([t1,t2],i)=>{
+    const o1=+(1.5+Math.random()*2.5).toFixed(2);
+    const o2=+(1.5+Math.random()*2.5).toFixed(2);
+    const oDraw=+(2.2+Math.random()*1.8).toFixed(2);
+    return{id:`${sport}-${i}`,t1,t2,o1,o2,oDraw,sport};
+  });
+  bettingState.activeEvents[sport]=events;
+  const icons={football:'⚽',basketball:'🏀',boxing:'🥊',mma:'🥋'};
+  el.innerHTML=events.map(ev=>`
+    <div class="event-card">
+      <div class="event-name">${icons[sport]} ${ev.t1} vs ${ev.t2}</div>
+      <div class="event-meta">LIVE MATCH • RESULT IN ~3s AFTER BET</div>
+      <div class="odds-row">
+        <div class="odds-btn" id="${ev.id}-0" onclick="pickSportBet('${ev.id}','${ev.t1}',${ev.o1},'${sport}')">
+          <div class="odds-name">${ev.t1}</div><div class="odds-val">${ev.o1}×</div>
+        </div>
+        ${sport!=='boxing'&&sport!=='mma'?`<div class="odds-btn" id="${ev.id}-draw" onclick="pickSportBet('${ev.id}','Draw',${ev.oDraw},'${sport}')">
+          <div class="odds-name">DRAW</div><div class="odds-val">${ev.oDraw}×</div>
+        </div>`:''}
+        <div class="odds-btn" id="${ev.id}-1" onclick="pickSportBet('${ev.id}','${ev.t2}',${ev.o2},'${sport}')">
+          <div class="odds-name">${ev.t2}</div><div class="odds-val">${ev.o2}×</div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function pickSportBet(evId,pick,odds,sport){
+  document.querySelectorAll(`[id^="${evId}"]`).forEach(b=>b.classList.remove('picked'));
+  const ev=bettingState.activeEvents[sport].find(e=>e.id===evId);
+  bettingState.betSlip={event:`${evId}`,pick,odds,label:`${pick} @ ${odds}×`,evId,sport,ev};
+  updBetSlip();sfx('click');
+}
+
+function updBetSlip(){
+  const slip=bettingState.betSlip;
+  const itemsEl=document.getElementById('betSlipItems');
+  const ctrlEl=document.getElementById('betSlipControls');
+  const btn=document.getElementById('placeBetBtn');
+  const potEl=document.getElementById('betPotential');
+  if(!slip.pick){itemsEl.innerHTML='<div style="font-family:\'Orbitron\',monospace;font-size:10px;color:rgba(255,255,255,0.25);text-align:center;padding:12px">Select an outcome</div>';btn.disabled=true;return;}
+  itemsEl.innerHTML=`<div class="slip-item"><span style="color:#fff">${slip.label}</span><span style="color:rgba(255,255,255,0.3);cursor:pointer" onclick="clearBetSlip()">✕</span></div>`;
+  ctrlEl.removeAttribute('style');
+  btn.disabled=false;
+  const bet=parseFloat(document.getElementById('betAmount').value)||50000;
+  const pot=bet*slip.odds;
+  if(potEl)potEl.textContent=fmtN(pot);
+  document.getElementById('betAmount').oninput=updBetSlip;
+}
+
+function clearBetSlip(){
+  bettingState.betSlip={event:null,pick:null,odds:null,label:''};
+  document.getElementById('betSlipControls').style.display='none';
+  document.getElementById('placeBetBtn').disabled=true;
+  document.getElementById('betSlipItems').innerHTML='<div style="font-family:\'Orbitron\',monospace;font-size:10px;color:rgba(255,255,255,0.25);text-align:center;padding:12px">Select an outcome</div>';
+}
+
+function placeBet(){
+  const slip=bettingState.betSlip;
+  const bet=parseFloat(document.getElementById('betAmount').value)||50000;
+  if(!slip.pick){toast('Select an outcome first!','error');return;}
+  if(S.cash<bet){toast('Not enough cash!','error');return;}
+  lose(bet);sfx('click');toast('🎯 Bet placed! Awaiting result...','success');
+  if(bettingState.currentTab==='horse'){
+    if(!bettingState.horseRace.running)startHorseRace(bet,slip);
+    else{// race already running, register bet
+      bettingState.horseRace.pendingBet={bet,slip};
+    }
+    return;
+  }
+  // Sports bets resolve after 2-4s
+  setTimeout(()=>resolveSportBet(slip,bet),2000+Math.random()*2000);
+}
+
+function startHorseRace(bet,slip){
+  const race=bettingState.horseRace;
+  if(race.running)return;
+  race.running=true;race.pos=HORSES.map(()=>0);race.winner=-1;
+  if(bet&&slip){race.pendingBet={bet,slip};}
+  document.getElementById('horseRaceTrack').style.display='block';
+  document.getElementById('startRaceBtn').disabled=true;
+  document.getElementById('horseRaceStatus').textContent='🏁 RACE STARTED!';
+  renderTrackUI();
+  const speeds=HORSES.map(()=>0.4+Math.random()*0.6);
+  race.loop=setInterval(()=>{
+    race.pos=race.pos.map((p,i)=>Math.min(100,p+speeds[i]*(0.8+Math.random()*0.4)));
+    updTrackUI();
+    const winner=race.pos.findIndex(p=>p>=100);
+    if(winner>=0){
+      clearInterval(race.loop);race.winner=winner;race.running=false;
+      document.getElementById('horseRaceStatus').textContent=`🏆 ${HORSES[winner]} WINS!`;
+      document.getElementById('startRaceBtn').disabled=false;
+      if(race.pendingBet){
+        const{bet:b,slip:s}=race.pendingBet;race.pendingBet=null;
+        const won=s.horseIdx===winner;
+        if(won){const prize=b*s.odds*getMult();win(prize,true);toast(`🐎 ${HORSES[winner]} won! +${fmtN(prize)}`,'gold');addBetHistory(s.label,b,prize,true);}
+        else{toast(`🐎 ${HORSES[winner]} won. Lost ${fmtN(b)}`,'error');addBetHistory(s.label,b,0,false);}
+        updHUD();clearBetSlip();
+      }
+    }
+  },100);
+}
+
+function renderTrackUI(){
+  const el=document.getElementById('horseRaceTrack');
+  el.innerHTML=HORSES.map((h,i)=>`
+    <div class="horse-lane">
+      <div class="horse-name-lbl" style="color:${HORSE_COLORS[i]}">${h.split(' ')[0]}</div>
+      <div class="horse-track-bar"><div class="horse-pos-bar" id="hpos${i}" style="background:${HORSE_COLORS[i]};width:0%"></div></div>
+      <div class="horse-icon" id="hicon${i}">🐎</div>
+    </div>`).join('');
+}
+
+function updTrackUI(){
+  bettingState.horseRace.pos.forEach((p,i)=>{
+    const bar=document.getElementById('hpos'+i);
+    if(bar)bar.style.width=p+'%';
+  });
+}
+
+function resolveSportBet(slip,bet){
+  const ev=slip.ev;if(!ev)return;
+  // Weighted random result based on odds (lower odds = more likely)
+  const opts=[{label:ev.t1,odds:ev.o1},{label:ev.t2,odds:ev.o2}];
+  if(slip.sport!=='boxing'&&slip.sport!=='mma')opts.push({label:'Draw',odds:ev.oDraw});
+  const totalWeight=opts.reduce((s,o)=>s+1/o.odds,0);
+  let r=Math.random()*totalWeight;
+  let result=opts[0];
+  for(const o of opts){r-=1/o.odds;if(r<=0){result=o;break;}}
+  const won=result.label===slip.pick;
+  if(won){
+    const prize=bet*slip.odds*getMult();win(prize,true);
+    toast(`🏆 ${result.label} wins! +${fmtN(prize)}`,'gold');
+    addBetHistory(slip.label,bet,prize,true);
+  } else{
+    toast(`❌ ${result.label} wins. Your bet lost.`,'error');
+    addBetHistory(slip.label,bet,0,false);
+  }
+  updHUD();clearBetSlip();
+  // Refresh events
+  setTimeout(()=>renderSportEvents(slip.sport),1000);
+}
+
+function addBetHistory(label,bet,prize,won){
+  const entry=`<div style="color:${won?'var(--ngr)':'#f44'}">${won?'✅':'❌'} ${label} — Bet: ${fmtN(bet)}${won?' → +'+fmtN(prize):''}</div>`;
+  const el=document.getElementById('betHistory');
+  if(el){el.innerHTML=entry+(el.innerHTML==='No bets placed yet'?'':el.innerHTML);if(el.children.length>15)el.removeChild(el.lastChild);}
+}
+
 function init(){
   initSlots();renderMinesGrid();buildUpgrades();buildStocksUI();initCrash();
   startPassiveMine();drawWheel(0);drawRoulette(0);buildKenoGrid();
@@ -3952,6 +4520,8 @@ function init(){
   updHUD();updLocks();pcTab('shop');updSkipUI();
   setInterval(advanceDay,90000);
   document.getElementById('invCount').textContent='(0 parts)';
+  updGachaCollection();updGachaPity();updGachaActiveBuff();
+  renderHorseRace();
 
   // ── Swipe to open nav on mobile ──
   let tsX=0,tsY=0;
