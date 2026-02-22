@@ -530,6 +530,216 @@ border:1px solid rgba(57,255,20,0.3);color:var(--ngr);font-family:'Orbitron',mon
 .bey-power-btn.ready{background:rgba(255,215,0,0.1);border-color:rgba(255,215,0,0.5);color:var(--ng)}
 .bey-power-btn.active{background:rgba(255,215,0,0.3);border-color:var(--ng);color:var(--ng);box-shadow:0 0 16px rgba(255,215,0,0.4);animation:s2pulse 0.5s infinite}
 .bey-power-btn.cooling{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.3)}
+
+/* ─── HAMBURGER BUTTON (hidden on desktop) ─── */
+.hamburger{display:none;background:none;border:1px solid rgba(255,255,255,0.18);border-radius:8px;
+color:rgba(255,255,255,0.8);font-size:20px;width:38px;height:38px;cursor:pointer;
+align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;padding:0}
+.hamburger:hover{border-color:var(--nc);color:var(--nc)}
+.nav-backdrop{display:none;position:fixed;inset:0;z-index:98;background:rgba(0,0,0,0.6);backdrop-filter:blur(2px)}
+.nav-backdrop.open{display:block}
+
+/* ─── MOBILE LAYOUT (<= 768px) ─── */
+@media(max-width:768px){
+
+  /* HUD: tighter, hide logo text on very small */
+  .hud{padding:8px 12px;gap:6px;min-height:52px}
+  .hud-logo{font-size:11px;letter-spacing:1px}
+  .hud-left{gap:8px}
+  .active-char-mini{padding:3px 8px}
+  .active-char-mini svg{width:22px;height:22px}
+  .char-label{font-size:8px!important}
+  .char-mult{font-size:10px!important}
+  .music-btn{display:none}/* save space — toggled from settings */
+  .hud-stats{gap:5px;flex-wrap:nowrap}
+  .sp{padding:4px 8px;font-size:9px;gap:4px}
+  .sp .ico{font-size:11px}
+  /* hide BTC and income on tiny screens to keep cash+day */
+  @media(max-width:420px){
+    .sp.btc,.sp.inc{display:none}
+  }
+
+  /* HAMBURGER visible */
+  .hamburger{display:flex}
+
+  /* NAV becomes slide-in drawer from left */
+  .nav{
+    position:fixed;
+    top:0;left:-260px;bottom:0;
+    width:240px;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:stretch;
+    padding:60px 12px 20px;
+    gap:5px;
+    background:rgba(5,5,16,0.98);
+    border-right:1px solid var(--br);
+    border-bottom:none;
+    z-index:99;
+    transition:left 0.28s cubic-bezier(0.4,0,0.2,1);
+    overflow-y:auto;
+    flex-wrap:nowrap;
+    backdrop-filter:blur(20px);
+  }
+  .nav.open{left:0}
+  .nb{
+    font-size:12px;padding:11px 16px;text-align:left;
+    border-radius:10px;white-space:nowrap;width:100%;
+  }
+
+  /* MAIN: less top padding since nav is now a drawer */
+  .main{padding-top:58px;padding-bottom:54px}
+
+  /* SECTION TITLE */
+  .sec-title{font-size:18px;margin-bottom:16px;padding:0 14px}
+  .s2-sec-title{font-size:15px;margin-bottom:14px;letter-spacing:1px}
+
+  /* GRIDS: everything single column */
+  .gg{grid-template-columns:1fr!important;padding:0 12px;gap:14px}
+  [style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important}
+  [style*="grid-template-columns:repeat(2"]{display:flex!important;flex-direction:column!important}
+  [style*="grid-template-columns:repeat(3"]{display:flex!important;flex-direction:column!important;gap:8px!important}
+
+  /* PANELS */
+  .gp{padding:16px;border-radius:14px;margin-bottom:0}
+  .gp .pt{font-size:11px;margin-bottom:12px}
+
+  /* Inputs and buttons touch-friendly */
+  .btn{padding:10px 16px;font-size:10px;min-height:40px}
+  .gi{padding:9px 10px;font-size:11px;width:100%!important;max-width:100%}
+  .iw{flex:1;min-width:0}
+  .ir{flex-wrap:wrap;gap:8px}
+
+  /* Mining section */
+  .mining-hero{flex-direction:column;text-align:center}
+  .btc-big{font-size:22px!important}
+  .hr-display{font-size:10px!important}
+  .mines-grid{grid-template-columns:repeat(5,1fr);gap:5px}
+  .mc{font-size:16px}
+
+  /* Slots: scale reels down */
+  .slots-wrap{padding:10px;gap:6px}
+  .reel{width:66px;height:180px}
+  .reel-sym{width:66px;height:60px;font-size:26px}
+
+  /* Roulette wheel */
+  #wc{width:200px!important;height:200px!important}
+  .wheel-wrap2{width:200px!important;height:200px!important}
+
+  /* Casino layout: stack everything */
+  [id="sec-casino"] .gg{flex-direction:column}
+
+  /* Crash section */
+  .crash-wrap{height:160px}
+  #cc{width:100%!important}
+
+  /* Stock rows */
+  .stock-row2{flex-wrap:wrap;gap:6px}
+  .sl-chart{display:none}/* hide sparklines on mobile */
+  .sl-act{flex-wrap:wrap}
+
+  /* PC shop diagram */
+  .pc-chassis{grid-template-columns:1fr 1fr!important}
+  .pcd-slot{min-height:40px}
+  .pcd-slot-name{font-size:7px}
+  .pc-diagram-title{font-size:9px}
+
+  /* Keno grid */
+  #kenoGrid{display:grid;grid-template-columns:repeat(8,1fr)!important}
+
+  /* Bottom stats bar */
+  .nwb{padding:5px 8px;gap:8px;font-size:8px;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start}
+  .nwi{white-space:nowrap;flex-shrink:0}
+
+  /* S2 tabs */
+  .s2-tabs{gap:5px;padding:0 12px}
+  .s2-tab{padding:7px 12px;font-size:9px;border-radius:8px}
+
+  /* Beyblade canvas */
+  #beyCanvas{width:100%!important;height:auto!important}
+
+  /* Char cards */
+  .char-page{padding:0 12px!important}
+  .char-big-card{padding:14px}
+  .cbig-mult{font-size:18px}
+  .cbig-quote{font-size:10px}
+
+  /* Lobby */
+  .lb{padding:14px}
+  .lr{gap:8px}
+  .lrn{font-size:10px}
+
+  /* Day bar */
+  .day-bar{padding:10px 14px;gap:8px}
+  .di{font-size:10px}
+
+  /* Progress panels */
+  .ptot{padding:10px}
+  .ptot-val{font-size:18px}
+
+  /* Arena bracket */
+  .arena-bracket{grid-template-columns:1fr 1fr!important;gap:8px}
+
+  /* Heist crew grid */
+  #crewGrid{grid-template-columns:1fr!important}
+
+  /* Real estate */
+  .re-prop-stats{gap:8px}
+  .re-stat-val{font-size:10px}
+
+  /* Beyblade workshop grids */
+  #beyLayerGrid,#beyDiscGrid,#beyDriverGrid{grid-template-columns:1fr!important;gap:6px}
+
+  /* Poker table */
+  .poker-ai-row{gap:6px}
+  .poker-ai-hand{font-size:8px}
+  .pcard{width:34px;height:50px}
+  .pcard-r{font-size:10px}
+  .pcard-s{font-size:12px}
+  .poker-community{gap:4px}
+  .poker-table{padding:10px}
+
+  /* Sic bo grid */
+  .sic-grid{grid-template-columns:1fr 1fr!important}
+  .sic-die{width:44px;height:44px;font-size:24px}
+
+  /* Dragon Tiger */
+  .dt-cards{gap:10px}
+
+  /* Liar's dice */
+  .ld-dice-row{gap:7px}
+  .ld-die{width:46px;height:46px;font-size:24px}
+
+  /* Toast position */
+  .toast{bottom:60px;right:10px;max-width:220px;font-size:10px}
+
+  /* Unlock overlay */
+  .unlock-s2-title{font-size:30px}
+  .unlock-s2-sub{font-size:11px}
+  .s2-unlock-items{gap:10px}
+  .s2-unlock-item{padding:10px 14px;min-width:110px;font-size:9px}
+
+  /* Section max-width override */
+  [style*="max-width:980px"],[style*="max-width:800px"],[style*="max-width:760px"],
+  [style*="max-width:840px"],[style*="max-width:900px"],[style*="max-width:700px"],
+  [style*="max-width:680px"],[style*="max-width:660px"],[style*="max-width:640px"],
+  [style*="max-width:620px"],[style*="max-width:600px"],[style*="max-width:480px"]{
+    max-width:100%!important;padding-left:12px!important;padding-right:12px!important
+  }
+}
+
+/* ─── TINY PHONES (<= 390px extra tweaks) ─── */
+@media(max-width:390px){
+  .hud-logo{display:none}
+  .sp{padding:3px 7px;font-size:8px}
+  .nb{font-size:11px;padding:10px 14px}
+  .sec-title{font-size:15px}
+  .reel{width:58px;height:160px}
+  .reel-sym{width:58px;height:54px;font-size:22px}
+  .sic-die{width:38px;height:38px;font-size:20px}
+  .ld-die{width:40px;height:40px;font-size:20px}
+  #kenoGrid{grid-template-columns:repeat(6,1fr)!important}
+}
 </style>
 </head>
 <body>
@@ -537,6 +747,7 @@ border:1px solid rgba(57,255,20,0.3);color:var(--ngr);font-family:'Orbitron',mon
 
 <div class="hud">
   <div class="hud-left">
+    <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">☰</button>
     <div class="hud-logo">⬡ NEON VAULT</div>
     <div class="active-char-mini" onclick="showSec('chars')">
       <div id="hudCharSvg"></div>
@@ -555,7 +766,10 @@ border:1px solid rgba(57,255,20,0.3);color:var(--ngr);font-family:'Orbitron',mon
   </div>
 </div>
 
-<div class="nav">
+<!-- Mobile nav backdrop -->
+<div class="nav-backdrop" id="navBackdrop" onclick="closeNav()"></div>
+
+<div class="nav" id="mainNav">
   <button class="nb active" onclick="showSec('mining')" id="n-mining">⛏ MINING</button>
   <button class="nb" onclick="showSec('pcshop')" id="n-pcshop">🖥 PC FLIP</button>
   <button class="nb" onclick="showSec('casino')" id="n-casino">🎰 CASINO</button>
@@ -1640,10 +1854,24 @@ function lose(amount){
   S.cash-=actual;S.totalLost+=actual;S.winStreak=0;flash('hCash');updHUD();return actual;
 }
 
+// ─── MOBILE NAV DRAWER ───────────────────────────────────────────
+function toggleNav(){
+  const nav=document.getElementById('mainNav');
+  const bd=document.getElementById('navBackdrop');
+  const open=nav.classList.toggle('open');
+  if(open)bd.classList.add('open');
+  else bd.classList.remove('open');
+}
+function closeNav(){
+  document.getElementById('mainNav').classList.remove('open');
+  document.getElementById('navBackdrop').classList.remove('open');
+}
+
 function showSec(id){
   if(id==='casino'&&S.day<10){toast('🔒 Casino unlocks on Day 10!','error');sfx('lose');return}
   if(id==='crash'&&S.day<15){toast('🔒 Crash unlocks on Day 15!','error');sfx('lose');return}
   if(id==='stage2'&&!S.stage2){toast('🔒 Reach $100T net worth to unlock!','error');sfx('lose');return}
+  closeNav(); // close drawer on mobile when navigating
     document.querySelectorAll('.sec').forEach(s=>{s.classList.remove('active');s.style.display=''});
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
   const secEl=document.getElementById('sec-'+id);
@@ -3724,6 +3952,21 @@ function init(){
   updHUD();updLocks();pcTab('shop');updSkipUI();
   setInterval(advanceDay,90000);
   document.getElementById('invCount').textContent='(0 parts)';
+
+  // ── Swipe to open nav on mobile ──
+  let tsX=0,tsY=0;
+  document.addEventListener('touchstart',e=>{tsX=e.touches[0].clientX;tsY=e.touches[0].clientY},{passive:true});
+  document.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-tsX;
+    const dy=Math.abs(e.changedTouches[0].clientY-tsY);
+    if(dy>60)return; // ignore vertical swipes
+    const nav=document.getElementById('mainNav');
+    if(dx>55&&tsX<40&&!nav.classList.contains('open'))toggleNav(); // swipe right from edge
+    if(dx<-55&&nav.classList.contains('open'))closeNav(); // swipe left to close
+  },{passive:true});
+
+  // ── Close nav when pressing Escape ──
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav();});
 }
 init();
 </script>
